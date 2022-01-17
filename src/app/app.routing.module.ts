@@ -1,3 +1,4 @@
+import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 import { AuthGuard } from './core/auth/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
         loadChildren: './home/home.module#HomeModule'
     },
     {
+      // rotas parametrizadas
         path: 'user/:userName',
         component: PhotoListComponent,
         resolve: {
@@ -28,6 +30,11 @@ const routes: Routes = [
         path: 'p/add',
         component: PhotoFormComponent,
         canActivate: [AuthGuard]
+    },
+    {
+      // rota parametrizada. Pode qualquer nome depois do :
+      path: 'p/:photoId',
+      component: PhotoDetailsComponent
     },
     {
         path: '**',
