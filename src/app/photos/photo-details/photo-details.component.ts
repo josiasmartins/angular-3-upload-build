@@ -6,8 +6,7 @@ import { PhotoService } from '../photo/photo.service';
 import { PhotoComment } from '../photo/photo-comments';
 
 @Component({
-  templateUrl: './photo-details.component.html',
-  styleUrls: ['./phot-details.css']
+  templateUrl: './photo-details.component.html'
 })
 export class PhotoDetailsComponent implements OnInit {
 
