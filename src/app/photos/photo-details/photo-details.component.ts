@@ -13,6 +13,7 @@ export class PhotoDetailsComponent implements OnInit {
 
   public photo$: Observable<Photo>;
   public comments$: Observable<PhotoComment[]>;
+  public photoId: number;
 
   constructor(
     private activedRouter: ActivatedRoute,
@@ -21,9 +22,8 @@ export class PhotoDetailsComponent implements OnInit {
 
 
   public ngOnInit(): void {
-    const photoId = this.activedRouter.snapshot.params.photoId;
-    this.photo$ = this.photoService.findById(photoId);
-    this.comments$ = this.photoService.getComments(photoId);
+    this.photoId = this.activedRouter.snapshot.params.photoId;
+    this.photo$ = this.photoService.findById(this.photoId);
   }
 
 
