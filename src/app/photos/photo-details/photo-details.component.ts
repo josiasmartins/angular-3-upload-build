@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   templateUrl: './photo-details.component.html'
 })
-export class PhotoDetailsComponent {
+export class PhotoDetailsComponent implements OnInit {
 
-  constructor() {
-    console.log('chamei')
+  constructor(
+    private activedRouter: ActivatedRoute
+  ) {}
+
+
+  public ngOnInit(): void {
+    const id = this.activedRouter.snapshot.params.photoId;
+    console.log(id);
   }
+
+
 
 }
