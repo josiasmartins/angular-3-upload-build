@@ -33,10 +33,17 @@ export class PhotoService {
     }
 
     public findById(photoId: number) {
-      return this.http.get<Photo>(API + '/photos/' + id);
+      return this.http.get<Photo>(API + '/photos/' + photoId);
     }
 
     public getComments(photoId: number) {
       return this.http.get<PhotoComment[]>(API + '/photos/' + photoId + '/comments');
+    }
+
+    public addComment(photoId: number, commentText: string) {
+      return this.http.post(
+        API + '/photos/' + photoId + '/comments',
+        { commentText }
+      )
     }
 }

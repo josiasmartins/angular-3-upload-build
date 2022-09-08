@@ -27,4 +27,14 @@ export class PhotoCommentsComponent implements OnInit {
       comments: ['', Validators.maxLength(300)]
     })
   }
+
+  public save() {
+    const comment = this.commentForm.get('comment').value as string;
+    this.photoService
+      .addComment(this.photoId, comment)
+      .subscribe(() => {
+        this.commentForm.reset();
+        alert('Comentário adicionado com sucesso');
+      })
+  }
 }
