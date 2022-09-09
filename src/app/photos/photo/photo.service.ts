@@ -41,6 +41,7 @@ export class PhotoService {
     }
 
     public addComment(photoId: number, commentText: string) {
+      console.log('chamei');
       return this.http.post(
         API + '/photos/' + photoId + '/comments',
         { commentText }
