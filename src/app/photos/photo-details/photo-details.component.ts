@@ -28,6 +28,10 @@ export class PhotoDetailsComponent implements OnInit {
   public ngOnInit(): void {
     this.photoId = this.activedRouter.snapshot.params.photoId;
     this.photo$ = this.photoService.findById(this.photoId);
+    this.photo$.subscribe(() => {}, err => {
+      console.log(err);
+      this.router.navigate(['not-found'])
+    });
   }
 
   public remove() {
