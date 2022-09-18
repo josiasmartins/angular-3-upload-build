@@ -4,8 +4,10 @@ import { Alert, AlertType } from './alert';
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {
-
-  public alertSubject: Subject<Alert>;
+  // Subject
+  // Um Subject é um tipo genérico, isto é, o tipo que definirmos será o tipo de dado emitido.
+  // Possui o método `asObservable' .
+  public alertSubject: Subject<Alert> = new Subject<Alert>();
 
   public success(message: string) {
     this.alert(AlertType.SUCCESS, message)
