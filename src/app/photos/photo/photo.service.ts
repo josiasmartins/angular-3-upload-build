@@ -13,7 +13,7 @@ export class PhotoService {
 
     listFromUser(userName: string) {
         return this.http
-            .get<Photo[]>(API + '/' + userName + '/photos');       
+            .get<Photo[]>(API + '/' + userName + '/photos');
     }
 
     listFromUserPaginated(userName: string, page: number) {
@@ -21,9 +21,9 @@ export class PhotoService {
             .append('page', page.toString());
 
         return this.http
-            .get<Photo[]>(API + '/' + userName + '/photos', { params });       
-    }  
-    
+            .get<Photo[]>(API + '/' + userName + '/photos', { params });
+    }
+
     public upload(descripton: string, allowComments: boolean, file: File) {
       const formData = new FormData;
       formData.append('description', descripton);

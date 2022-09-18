@@ -23,7 +23,7 @@ export class PhotoListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    alert('chamei');
+    // alert('chamei');
     // this.userName = this.activatedRoute.snapshot.params.userName;
     this.activatedRoute.params.subscribe(params => {
       this.userName = params.userName;
