@@ -1,7 +1,7 @@
-# Alurapic
+# Angular parte 3: upload, build e novos componentes
 
 ## demo
-![demo]()
+![demo](./src/assets/alurapic.gif);
 
 ## [api-alurapic](https://github.com/josiasmartins/api-alurapic)
 
